@@ -1,12 +1,12 @@
 <?php
 
-// fw = for who
+
 function ordr_pz($pizzatype, $client) {
     $type = $pizzatype;
     echo 'Creating new order... <br>';
     $toPrint = 'A ';
     $toPrint .= $pizzatype;
-    $p = calc_cts($type);
+    $price = calc_cts($type);
 
     $address = 'unknown';
     if($client == 'koen')
@@ -21,12 +21,12 @@ function ordr_pz($pizzatype, $client) {
 
     $toPrint .=   ' pizza should be sent to ' . $client . ". <br>The address: {$address}.";
     echo $toPrint; echo '<br>';
-    echo'The bill is €'.$p.'.<br>';
+    echo'The bill is €'.$price.'.<br>';
     echo "Order finished.<br><br>";
 }
 
-function total_price($p) {
-    return $p;
+function total_price($price) {
+    return $price;
 }
 
 function test($p_type) {
