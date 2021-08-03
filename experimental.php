@@ -1,7 +1,7 @@
 <?php
 
 // fw = for who
-function ordr_pz($pizzatype, $fw) {
+function ordr_pz($pizzatype, $client) {
     $type = $pizzatype;
     echo 'Creating new order... <br>';
     $toPrint = 'A ';
@@ -9,17 +9,17 @@ function ordr_pz($pizzatype, $fw) {
     $p = calc_cts($type);
 
     $address = 'unknown';
-    if($fw == 'koen')
+    if($client == 'koen')
     {
         $address = 'a yacht in Antwerp';
-    } elseif ($fw == 'manuele')
+    } elseif ($client == 'manuele')
     {
         $address = 'somewhere in Belgium';
-    } elseif ($fw == 'students') {
+    } elseif ($client == 'students') {
         $address = 'BeCode office';
     }
 
-    $toPrint .=   ' pizza should be sent to ' . $fw . ". <br>The address: {$address}.";
+    $toPrint .=   ' pizza should be sent to ' . $client . ". <br>The address: {$address}.";
     echo $toPrint; echo '<br>';
     echo'The bill is €'.$p.'.<br>';
     echo "Order finished.<br><br>";
@@ -33,8 +33,7 @@ function test($p_type) {
     echo "Test: type is {$p_type}. <br>";
 }
 
-function calc_cts($p_type)
-{
+function calc_cts($p_type) {
     $cst = 'unknown';
 
     if ($p_type == 'marguerita') {
@@ -56,17 +55,15 @@ function calc_cts($p_type)
         
     }
     
-
     return $cst;
 }
 
-function ordr_piz_all()
-{
-$test= 0;
-ordr_pz('calzone', 'koen');
-ordr_pz('marguerita', 'manuele');
+function ordr_piz_all() {
+    $test= 0;
+    ordr_pz('calzone', 'koen');
+    ordr_pz('marguerita', 'manuele');
 
-ordr_pz('golden', 'students');
+    ordr_pz('golden', 'students');
 }
 
 function make_Allhappy($do_it) {
