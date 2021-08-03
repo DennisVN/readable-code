@@ -29,30 +29,30 @@ function total_price($price)
     return $price;
 }
 
-function test($p_type) 
+function test($flavor) 
 {
-    echo "Test: type is {$p_type}. <br>";
+    echo "Test: type is {$flavor}. <br>";
 }
 
-function calc_cts($p_type) 
+function calc_cts($flavor) 
 {
     $cst = 'unknown';
 
-    if ($p_type == 'marguerita') 
+    if ($flavor == 'marguerita') 
     {
         $cst = 5;
     }else {
-        if ($p_type == 'golden')
+        if ($flavor == 'golden')
         {
             $cst = 100;
         }
 
-        if ($p_type == 'calzone')
+        if ($flavor == 'calzone')
         {
             $cst = 10;
         }
 
-        if ($p_type == 'hawai') 
+        if ($flavor == 'hawai') 
         {
             throw new Exception('Computer says no');
         }
@@ -67,7 +67,6 @@ function ordr_piz_all()
     $test= 0;
     ordr_pz('calzone', 'koen');
     ordr_pz('marguerita', 'manuele');
-
     ordr_pz('golden', 'students');
 }
 
