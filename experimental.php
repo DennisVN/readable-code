@@ -1,7 +1,8 @@
 <?php
 
 
-function ordr_pz($pizzatype, $client) {
+function ordr_pz($pizzatype, $client) 
+{
     $type = $pizzatype;
     echo 'Creating new order... <br>';
     $toPrint = 'A ';
@@ -23,15 +24,18 @@ function ordr_pz($pizzatype, $client) {
     echo "Order finished.<br><br>";
 }
 
-function total_price($price) {
+function total_price($price) 
+{
     return $price;
 }
 
-function test($p_type) {
+function test($p_type) 
+{
     echo "Test: type is {$p_type}. <br>";
 }
 
-function calc_cts($p_type) {
+function calc_cts($p_type) 
+{
     $cst = 'unknown';
 
     if ($p_type == 'marguerita') 
@@ -58,7 +62,8 @@ function calc_cts($p_type) {
     return $cst;
 }
 
-function ordr_piz_all() {
+function ordr_piz_all() 
+{
     $test= 0;
     ordr_pz('calzone', 'koen');
     ordr_pz('marguerita', 'manuele');
@@ -66,7 +71,8 @@ function ordr_piz_all() {
     ordr_pz('golden', 'students');
 }
 
-function make_Allhappy($do_it) {
+function make_Allhappy($do_it) 
+{
 if ($do_it) {
     ordr_piz_all();
     } else {
